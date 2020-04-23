@@ -8,5 +8,10 @@ class UserService(IUserService):
 
     def get_user_service(self, _id):
         print ('User services')
-        user = self.query_manager.get_user_query(_id)
-        return user
+        User = self.query_manager.get_user_query(_id)
+        return User
+
+    def get_users_service(self):
+        print ('Users services')
+        Users = self.query_manager.get_users_query()
+        return Users

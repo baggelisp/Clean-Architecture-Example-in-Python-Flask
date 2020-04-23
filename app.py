@@ -10,7 +10,9 @@ userCtrl = UserController(userService)
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_object(os.environ['APP_SETTINGS'])
+    app.config.from_object('config.ProductionConfig')
+    #app.config.from_envvar('APP_CONFIG')  
+    #app.config.from_pyfile('config.py')
     return app
 
 app = create_app()
@@ -18,7 +20,6 @@ app = create_app()
 
 @app.route('/')
 def hello():
-    print(os.environ['APP_SETTINGS'])
     return "Hello World!"
 
 
@@ -26,7 +27,12 @@ def hello():
 def get_user(_id):
     return userCtrl.get_user_controller(_id)
 
+@app.route('/users', methods=['GET'])
+def get_all_user():
+    return userCtrl.get_all_user_controller()
+
+
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=os.environ['PORT'])

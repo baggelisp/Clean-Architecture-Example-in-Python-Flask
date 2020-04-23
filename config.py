@@ -7,6 +7,8 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'this-really-needs-to-be-changed'
+    DATABASE_KEY = 'DB_KEY'
+    API_ENDPOINT = 'API_ENDPOINT'
 
 
 class ProductionConfig(Config):

@@ -1,3 +1,4 @@
+from flask import jsonify
 
 from service.interfaces.IUserService import IUserService
 from .interfaces.IUserController import IUserController
@@ -8,6 +9,12 @@ class UserController(IUserController):
 
     def get_user_controller(self, _id):
         print ('User controller')
-        user =  self.user_service.get_user_service(_id)
-        return user
+        User =  self.user_service.get_user_service(_id)
+        return jsonify(User.to_dict())
+
+    
+    def get_all_user_controller(self):
+        Users =  self.user_service.get_users_service()
+        repsArrayOfUsers = list(map(lambda x: x.__dict__, Users)6)
+        return jsonify(users=repsArrayOfUsers) 
 

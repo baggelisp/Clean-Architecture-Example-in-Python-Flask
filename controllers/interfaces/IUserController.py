@@ -6,4 +6,10 @@ class IUserController(object):
 
         raise NotImplementedError
 
+    def get_all_user_controller(self):
+        """
+        """
+
+        raise NotImplementedError
+
    
