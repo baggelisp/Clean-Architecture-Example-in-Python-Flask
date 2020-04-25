@@ -15,6 +15,6 @@ class UserController(IUserController):
     
     def get_all_user_controller(self):
         Users =  self.user_service.get_users_service()
-        repsArrayOfUsers = list(map(lambda x: x.__dict__, Users)6)
+        repsArrayOfUsers = list(map(lambda x: x.__dict__, Users))
         return jsonify(users=repsArrayOfUsers) 
 
