@@ -1,11 +1,11 @@
 # Clean-Architecture-Example-in-Python-Flask
 
-To Run: <br />
+## Running:
 export PORT=5000 <br />
 python3 app.py <br />
 
-Running with docker-compose: <br />
-docker-compose up <br />
+## Running on docker-compose:
+docker-compose up
 
 ## Entities:
 
