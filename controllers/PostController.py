@@ -9,10 +9,10 @@ class PostController(IPostController):
 
     def get_single_post_controller(self, _id):
         print ('Post controller')
-        Post =  self.post_service.get_single_post_service(_id)
-        return jsonify(Post.to_dict())
+        Post =  self.post_service.get_single_post_service(_id) # returns post entity
+        return jsonify(Post.to_dict()) # entity to dict
 
-    def get_single_post_commnets_controller(self, _id):
+    def get_single_post_comments_controller(self, _id):
         print ('Post controller')
-        Post =  self.post_service.get_single_post_comments_service(_id)
-        return jsonify(Post.to_dict())
+        Post =  self.post_service.get_single_post_comments_service(_id) # returns post entity
+        return jsonify(Post.to_dict()) # entity to dict

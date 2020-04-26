@@ -42,14 +42,13 @@ def get_user(_id):
 def get_all_user():
     return userCtrl.get_all_user_controller()
 
-
 @app.route('/post/<int:_id>', methods=['GET'])
 def get_post(_id):
     return postCtrl.get_single_post_controller(_id)
     
 @app.route('/post-comments/<int:_id>', methods=['GET'])
 def get_post_with_comments(_id):
-    return postCtrl.get_single_post_commnets_controller(_id)
+    return postCtrl.get_single_post_comments_controller(_id)
     
 
 

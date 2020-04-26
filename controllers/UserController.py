@@ -9,12 +9,13 @@ class UserController(IUserController):
 
     def get_user_controller(self, _id):
         print ('User controller')
-        User =  self.user_service.get_user_service(_id)
-        return jsonify(User.to_dict())
+        User =  self.user_service.get_user_service(_id) # returns entity
+        return jsonify(User.to_dict()) # entity to object
 
     
     def get_all_user_controller(self):
-        Users =  self.user_service.get_users_service()
-        repsArrayOfUsers = list(map(lambda x: x.__dict__, Users))
+        print ('User controller')
+        Users =  self.user_service.get_users_service() # returns list of entities
+        repsArrayOfUsers = list(map(lambda x: x.__dict__, Users)) # list of entities to list of objects 
         return jsonify(users=repsArrayOfUsers) 
 

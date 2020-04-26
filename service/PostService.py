@@ -10,16 +10,16 @@ class PostService(IPostService):
 
     def get_single_post_service(self, _id):
         print ('Post services')
-        Post = self.posts_query_manager.get_single_post_query(_id)
-        return Post
+        Post = self.posts_query_manager.get_single_post_query(_id) 
+        return Post # returns post entity
 
     def get_single_post_comments_service(self, _id):
         print ('Post services')
-        Post = self.posts_query_manager.get_single_post_query(_id)
-        commentsEntitiesArr = self.comments_query_manager.get_comment_of_single_post(_id)
-        # Array of comments from comments entities array
-        commentsArray = [commentEnt.to_dict() for commentEnt in commentsEntitiesArr]
+        Post = self.posts_query_manager.get_single_post_query(_id) # returns post entity
+        commentsEntitiesArr = self.comments_query_manager.get_comment_of_single_post(_id) # returns array of entities
+        # List of entities to list of objects
+        commentsArray = list(map(lambda x: x.__dict__, commentsEntitiesArr))
         # populate post with commnets
         setattr(Post, 'comments', commentsArray)
-        return Post
+        return Post  # returns post entity
 

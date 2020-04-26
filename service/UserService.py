@@ -9,9 +9,9 @@ class UserService(IUserService):
     def get_user_service(self, _id):
         print ('User services')
         User = self.query_manager.get_user_query(_id)
-        return User
+        return User # returns entity
 
     def get_users_service(self):
         print ('Users services')
         Users = self.query_manager.get_users_query()
-        return Users
+        return Users # returns list of entities

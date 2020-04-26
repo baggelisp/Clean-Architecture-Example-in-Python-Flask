@@ -6,7 +6,7 @@ class IPostController(object):
 
         raise NotImplementedError
 
-    def get_single_post_commnets_controller(self, _id):
+    def get_single_post_comments_controller(self, _id):
         """
         """
 
